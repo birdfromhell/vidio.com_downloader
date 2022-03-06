@@ -63,8 +63,8 @@ async def echo(bot, update):
       await update.reply_text(f"You are Banned\n\nReason: {ban_status['ban_reason']}")
       return
     logger.info(update.from_user)
-    youtube_dl_username = iniakunsharingingat@dirumahpica.ml
-    youtube_dl_password = Buahnaga
+    youtube_dl_username = {EMAIL}
+    youtube_dl_password = {PASS}
     file_name = None
     url = update.text
     folder = f'./lk21/{update.from_user.id}/'
