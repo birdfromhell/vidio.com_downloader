@@ -179,9 +179,9 @@ async def echo(bot, update):
         if file_name is not None:
             file_name = file_name.strip()
         # https://stackoverflow.com/a/761825/4723940
-        if youtube_dl_username is not None:
+        if youtube_dl_username == None:
             youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password is not None:
+        if youtube_dl_password == None:
             youtube_dl_password = youtube_dl_password.strip()
         logger.info(url)
         logger.info(file_name)
@@ -210,12 +210,12 @@ async def echo(bot, update):
             "-j",
             url
         ]
-    if youtube_dl_username is not None:
+    if youtube_dl_username == None:
         command_to_exec.append("--username")
-        command_to_exec.append(youtube_dl_username)
-    if youtube_dl_password is not None:
+        command_to_exec.append(config.EMAIL)
+    if youtube_dl_password == None:
         command_to_exec.append("--password")
-        command_to_exec.append(youtube_dl_password)
+        command_to_exec.append(config.PASS)
     # logger.info(command_to_exec)
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
