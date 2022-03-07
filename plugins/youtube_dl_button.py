@@ -83,9 +83,9 @@ async def youtube_dl_call_back(bot, update):
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
         # https://stackoverflow.com/a/761825/4723940
-        if youtube_dl_username is not None:
+        if youtube_dl_username == None:
             youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password is not None:
+        if youtube_dl_password == None:
             youtube_dl_password = youtube_dl_password.strip()
         logger.info(youtube_dl_url)
         logger.info(custom_file_name)
@@ -142,12 +142,12 @@ async def youtube_dl_call_back(bot, update):
     if Config.HTTP_PROXY != "":
         command_to_exec.append("--proxy")
         command_to_exec.append(Config.HTTP_PROXY)
-    if youtube_dl_username is not None:
+    if youtube_dl_username == None:
         command_to_exec.append("--username")
-        command_to_exec.append(youtube_dl_username)
-    if youtube_dl_password is not None:
+        command_to_exec.append(config.EMAIL)
+    if youtube_dl_password == None:
         command_to_exec.append("--password")
-        command_to_exec.append(youtube_dl_password)
+        command_to_exec.append(config.PASS)
     command_to_exec.append("--no-warnings")
     # command_to_exec.append("--quiet")
     logger.info(command_to_exec)
