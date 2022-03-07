@@ -40,5 +40,5 @@ class Config(object):
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
     # vidio.com email
     EMAIL = "iniakunsharingingat@dirumahpica.ml"
-    # password vidio,com
+    # password vidio.com
     PASS = "Buahnaga"

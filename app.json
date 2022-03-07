@@ -75,17 +75,6 @@
       "value": "",
       "required": false
     },
-    "EMAIL": {
-      "description": "your vidio email",
-      "value": "",
-      "required": false
-    },
-    "PASS": {
-      "description": "password"
-      "value": "",
-      "required": false
-    }
-  },
   "addons": [
   ],
   "buildpacks": [{
