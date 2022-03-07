@@ -38,3 +38,7 @@ class Config(object):
     SESSION_NAME = os.environ.get("SESSION_NAME", "")
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
+    # vidio.com email
+    EMAIL = "iniakunsharingingat@dirumahpica.ml"
+    # password vidio,com
+    PASS = "Buahnaga"
