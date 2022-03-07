@@ -180,9 +180,9 @@ async def echo(bot, update):
         if file_name is not None:
             file_name = file_name.strip()
         # https://stackoverflow.com/a/761825/4723940
-        if youtube_dl_username == None:
+        if youtube_dl_username is not None:
             youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password == None:
+        if youtube_dl_password is not None:
             youtube_dl_password = youtube_dl_password.strip()
         logger.info(url)
         logger.info(file_name)

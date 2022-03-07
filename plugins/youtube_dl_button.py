@@ -15,7 +15,7 @@ import os
 import shutil
 import time
 from datetime import datetime
-
+from sample_config import Config
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -83,9 +83,9 @@ async def youtube_dl_call_back(bot, update):
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
         # https://stackoverflow.com/a/761825/4723940
-        if youtube_dl_username == None:
+        if youtube_dl_username is not None:
             youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password == None:
+        if youtube_dl_password is not None:
             youtube_dl_password = youtube_dl_password.strip()
         logger.info(youtube_dl_url)
         logger.info(custom_file_name)
