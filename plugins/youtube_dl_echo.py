@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | X-Noid
-
 # the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -9,7 +5,6 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 import lk21, requests, urllib.parse, filetype, os, time, shutil, tldextract, asyncio, json, math
 from PIL import Image
-from sample_config import Config
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -211,12 +206,12 @@ async def echo(bot, update):
             "-j",
             url
         ]
-    if youtube_dl_username == None:
+    if youtube_dl_username is not None:
         command_to_exec.append("--username")
-        command_to_exec.append(config.EMAIL)
-    if youtube_dl_password == None:
+        command_to_exec.append(youtube_dl_username)
+    if youtube_dl_password is not None:
         command_to_exec.append("--password")
-        command_to_exec.append(config.PASS)
+        command_to_exec.append(youtube_dl_password)
     # logger.info(command_to_exec)
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
