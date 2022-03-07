@@ -1,3 +1,4 @@
+     
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
@@ -15,7 +16,7 @@ import os
 import shutil
 import time
 from datetime import datetime
-from sample_config import Config
+
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -142,12 +143,12 @@ async def youtube_dl_call_back(bot, update):
     if Config.HTTP_PROXY != "":
         command_to_exec.append("--proxy")
         command_to_exec.append(Config.HTTP_PROXY)
-    if youtube_dl_username == None:
+    if youtube_dl_username is not None:
         command_to_exec.append("--username")
-        command_to_exec.append(config.EMAIL)
-    if youtube_dl_password == None:
+        command_to_exec.append(youtube_dl_username)
+    if youtube_dl_password is not None:
         command_to_exec.append("--password")
-        command_to_exec.append(config.PASS)
+        command_to_exec.append(youtube_dl_password)
     command_to_exec.append("--no-warnings")
     # command_to_exec.append("--quiet")
     logger.info(command_to_exec)
